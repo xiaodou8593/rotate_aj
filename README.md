@@ -3,25 +3,34 @@
 
 ## 前置数据包
 要使用rot_aj，您首先需要安装小豆数学库2.0.1或以上版本
+
 链接：https://github.com/xiaodou8593/math2.0/
+
 手动运行数学库初始化：function math:_init
 
 ## 修改AJ数据包
 以test数据包为例，首先打开aj数据包路径中的以下函数，进行相应修改：
 
 1.打开`ajDP\data\zzz_test_internal\functions\summon\as_root.mcfunction`
+
 最后面追加一行命令：`function rot_aj:_set`
 
 2.打开`ajDP\data\zzz_test_internal\functions\tick_as_root.mcfunction`
+
 第4行命令`execute at @s on passengers run tp @s ~ ~ ~ ~ ~`修改为：`function rot_aj:_pre`
+
 最后面追加一行命令：`function rot_aj:_upd`
 
 3.以test动画为例，打开`ajDP\data\zzz_test_internal\functions\animations\test\play_as_root.mcfunction`
+
 最前面插入一行命令：`function rot_aj:_pre`
+
 最后面追加一行命令：`function rot_aj:_upd`
 
 4.以test动画为例，打开`ajDP\data\zzz_test_internal\functions\animations\test\stop_as_root.mcfunction`
+
 最前面插入一行命令：`function rot_aj:_pre`
+
 最后面追加一行命令：`function rot_aj:_upd`
 
 ## 对AJ动画进行旋转
