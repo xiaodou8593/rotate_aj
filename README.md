@@ -67,6 +67,8 @@ function math:qrot/_get
 #倍率1w，由于四元数公式中的θ/2，这里指定的角速度是9度/tick
 scoreboard players add qrot_alpha int 45000
 execute as @e[tag=math_marker,limit=1] run function math:qrot/_xyzw
+#扩展本地坐标系属性
+function math:qrot/_ex-uvw
 function math:qrot/_store
 ```
 
@@ -93,6 +95,7 @@ scoreboard players set qrot_alpha int 0
 function math:qrot/_get
 scoreboard players add qrot_alpha int 45000
 execute as @e[tag=math_marker,limit=1] run function math:qrot/_xyzw
+function math:qrot/_ex-uvw
 function math:qrot/_store
 ```
 
@@ -102,6 +105,7 @@ function math:qrot/_store
 #以AJ根实体为执行者，高频运行以下命令：
 function math:qrot/_get
 execute at @s as @e[tag=math_marker,limit=1] run function math:qrot/facing/_2toxyzw
+function math:qrot/_ex-uvw
 function math:qrot/_store
 ```
 
