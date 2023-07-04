@@ -64,6 +64,7 @@ scoreboard players set qrot_alpha int 0
 #func:example_tick
 #以AJ根实体为执行者，高频运行以下命令：
 function math:qrot/_get
+#倍率1w，由于四元数公式中的θ/2，这里指定的角速度是9度/tick
 scoreboard players add qrot_alpha int 45000
 execute as @e[tag=math_marker,limit=1] run function math:qrot/_xyzw
 function math:qrot/_store
